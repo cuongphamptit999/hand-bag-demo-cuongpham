@@ -1,0 +1,32 @@
+#main .item-detail img{
+    width: 445px;
+    height: 445px;
+    margin-bottom: 10px;
+}
+
+#main .item-detail{
+    margin-top: 30px;
+}
+
+#main .item-detail .btn-buy{
+    width: 400px;
+}
+
+#main .item-detail .btn-buy button{
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+#main .item-detail .col-md-5 .list-img{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#main .item-detail .col-md-5 .list-img img{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+
+}
