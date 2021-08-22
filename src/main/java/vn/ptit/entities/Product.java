@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -36,7 +37,7 @@ public class Product {
 	@Column(name = "date_create", nullable = false)
 	private Date date_create;
 	
-	@Column(name = "content", nullable = false)
+	@Column(name = "content", nullable = false, columnDefinition = "LONGTEXT")
 	private String content;
 	
 	@Column(name ="amount_stock", nullable = false)
@@ -53,6 +54,9 @@ public class Product {
 	
 	@Column(name = "status", nullable = true)
 	private boolean status;
+	
+	@Column(name = "video", nullable = true)
+	private String video;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")
@@ -173,6 +177,14 @@ public class Product {
 
 	public void setImgProducts(List<ImgProduct> imgProducts) {
 		this.imgProducts = imgProducts;
+	}
+
+	public String getVideo() {
+		return video;
+	}
+
+	public void setVideo(String video) {
+		this.video = video;
 	}
 
 }

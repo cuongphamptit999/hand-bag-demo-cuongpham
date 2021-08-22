@@ -20,7 +20,6 @@
 
 #main .item-detail .col-md-5 .list-img{
     display: flex;
-    justify-content: space-evenly;
 }
 
 #main .item-detail .col-md-5 .list-img img{
@@ -28,5 +27,6 @@
     height: 80px;
     border: 1px solid #ccc;
     cursor: pointer;
+    margin-right: 6px;
 
 }

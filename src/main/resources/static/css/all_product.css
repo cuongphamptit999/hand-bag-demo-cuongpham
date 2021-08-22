@@ -1,0 +1,92 @@
+.all-items{
+    margin-top: 20px;
+}
+.filter {
+    background: white;
+    float: left;
+    width: 25%;
+    padding: 20px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+.filter .title-x {
+    line-height: 30px;
+    display: block;
+    text-align: center;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.filter span.title {
+    color: #333;
+    font-size: 14px;
+    line-height: 45px;
+    display: block;
+    border-bottom: 1px solid #eee;
+    font-weight: 700;
+}
+
+.filter ul {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.filter ul li a {
+    text-decoration: none;
+    color: black;
+}
+.clear-with-height {
+    clear: both;
+}
+.product-list{
+    margin-top: 30px;
+    float: right;
+    width: 74%;
+    margin-left: 1px;
+    background-color: white;
+    padding: 5px;
+    
+}
+.list-sort {
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 10px 12px;
+}
+.list-sort select{
+    margin-right: 20px;
+    margin-left: 5px;
+    font-size: 13px;
+    height: 30px;
+    width: 150px;
+}
+.list-item img{
+    width: 100%;
+}
+.list-item .row{
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.list-sort .paging{
+    padding: 10px;
+    margin-left: 225px;
+}
+
+.list-sort .paging a{
+    padding: 8px 10px;
+    line-height: 10px;
+    margin-left: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+.list-sort .paging a:hover{
+    color: white;
+    background: orange;
+    
+}

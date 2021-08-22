@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div id="header">
 	<nav class="navbar navbar-expand-sm container">
@@ -9,15 +10,16 @@
 
 		<ul class="navbar-nav">
 			<div class="nav-left" style="display: flex; align-items: center;">
-				<li class="nav-item"><a class="nav-link" href="/contact.html">Liên
+				<li class="nav-item"><a class="nav-link" href="#">Liên
 						hệ</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbardrop"
 					data-toggle="dropdown"> Sản phẩm </a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Hãng A</a> <a
-							class="dropdown-item" href="#">Hãng B</a> <a
-							class="dropdown-item" href="#">Hãng C</a>
+						<a class="dropdown-item" href="/all-product">Tất cả</a>
+						<c:forEach var="category" items="${categories }">
+							<a class="dropdown-item" href="/all-product/${category.slug }">${category.name }</a>
+						</c:forEach>
 					</div></li>
 			</div>
 			<div class="nav-center" style="display: flex;">

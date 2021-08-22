@@ -18,7 +18,7 @@ import vn.ptit.repositories.CategoryRepository;
 import vn.ptit.ultils.CreateSlug;
 
 @Controller
-public class CategoryController {
+public class AdminCategoryController {
 	@Autowired CategoryRepository categoryRepository;
 
 	@RequestMapping(value = { "/admin/add-category" }, method = {RequestMethod.GET})
@@ -32,7 +32,6 @@ public class CategoryController {
 	public String addCategory1(@ModelAttribute("category") Category category, ModelMap model, HttpServletRequest req, HttpServletResponse resp) {
 		category.setDate_create(new Date());
 		category.setSlug(new CreateSlug().createSlug(category.getName()));
-		
 		categoryRepository.save(category);
 		return "admin/add_category";
 	}

@@ -21,16 +21,16 @@ import org.springframework.web.multipart.MultipartFile;
 import vn.ptit.entities.ImgProduct;
 import vn.ptit.entities.Product;
 import vn.ptit.repositories.CategoryRepository;
-import vn.ptit.repositories.ProductRepsitory;
+import vn.ptit.repositories.ProductRepository;
 import vn.ptit.ultils.CreateSlug;
 
 @Controller
-public class ProductController {
+public class AdminProductController {
 	@Value("${file.upload.product.path}")
 	private String fileProduct;
 	
 	@Autowired CategoryRepository categoryRepository;
-	@Autowired ProductRepsitory productRepsitory;
+	@Autowired ProductRepository productRepsitory;
 	
 	@RequestMapping(value = { "/admin/add-product" }, method = { RequestMethod.GET })
 	public String addProduct(ModelMap model, HttpServletRequest req, HttpServletResponse resp) {
@@ -44,7 +44,9 @@ public class ProductController {
 	public String add_laptop(@RequestParam("productImage") MultipartFile[] productImage,
 			@ModelAttribute("product") Product product, ModelMap model, HttpServletRequest request,
 			HttpServletResponse response) throws IllegalStateException, IOException {
-
+		
+		model.addAttribute("categories", categoryRepository.findAll());
+		
 		if (productImage != null && productImage.length > 0) {
 			for (MultipartFile multipartFile : productImage) {
 				if (multipartFile.getSize() <= 0)

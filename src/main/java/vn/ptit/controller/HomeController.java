@@ -10,15 +10,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import vn.ptit.repositories.ProductRepsitory;
+import vn.ptit.repositories.CategoryRepository;
+import vn.ptit.repositories.ProductRepository;
+import vn.ptit.services.ProductServices;
 
 @Controller
 public class HomeController {
-	
-	@Autowired ProductRepsitory productRepsitory;
+	@Autowired
+	ProductRepository productRepsitory;
+	@Autowired
+	ProductServices productServices;
+	@Autowired
+	CategoryRepository categoryRepository;
+
 	@RequestMapping(value = { "/", "/home" }, method = { RequestMethod.GET })
 	public String traVeTrangChu(Model model, HttpServletRequest req, HttpServletResponse resp) {
-		model.addAttribute("products", productRepsitory.findAll());
+
+		model.addAttribute("categories", categoryRepository.findAll());
+		model.addAttribute("productWallets", productServices.searchProductByIdCateSortName(1));
+		model.addAttribute("productBackpacks", productServices.searchProductByIdCateSortName(2));
+
 		return "index";
 	}
 
