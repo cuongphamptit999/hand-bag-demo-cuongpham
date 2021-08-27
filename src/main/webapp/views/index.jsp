@@ -77,7 +77,7 @@
 							</a>
 							<div class="price-buy">
 								<p>$${product.price }</p>
-								<a href="#"><i class="fas fa-shopping-cart"></i>&nbsp;Mua
+								<a href="javascript:void(0);" onclick="addToCart('${product.slug }')"><i class="fas fa-shopping-cart"></i>&nbsp;Mua
 									ngay</a>
 							</div>
 						</div>
@@ -91,7 +91,7 @@
 			<div class="row">
 				<c:forEach var="product" items="${productBackpacks }"
 					varStatus="loop">
-					<c:if test="${loop.index <=1 }">
+					<c:if test="${loop.index <=3 }">
 						<div class="col-md-3">
 							<a href="/product-detail/${product.slug }"><img
 								src="/files_product/${product.imgProducts.get(0).name }"
@@ -102,7 +102,7 @@
 								</a>
 								<div class="price-buy">
 									<p>$${product.price }</p>
-									<a href="#"><i class="fas fa-shopping-cart"></i>&nbsp;Mua
+									<a href="javascript:void(0);" onclick="addToCart('${product.slug }')"><i class="fas fa-shopping-cart"></i>&nbsp;Mua
 										ngay</a>
 								</div>
 							</div>

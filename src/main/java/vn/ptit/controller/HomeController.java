@@ -29,8 +29,16 @@ public class HomeController {
 		model.addAttribute("categories", categoryRepository.findAll());
 		model.addAttribute("productWallets", productServices.searchProductByIdCateSortName(1));
 		model.addAttribute("productBackpacks", productServices.searchProductByIdCateSortName(2));
-
+		
 		return "index";
+	}
+	
+	@RequestMapping(value = { "/login" }, method = { RequestMethod.GET })
+	public String login(Model model, HttpServletRequest req, HttpServletResponse resp) {
+
+		model.addAttribute("categories", categoryRepository.findAll());
+		
+		return "login";
 	}
 
 }

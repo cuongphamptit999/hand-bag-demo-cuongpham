@@ -41,68 +41,89 @@
 					</ul>
 				</div>
 
-				<div class="about-price">
-					<span class="title">PRICE</span>
+				<div class="about-brand">
+					<span class="title">BRAND</span>
 					<ul class="list-unstyled">
 						<c:choose>
-							<c:when test="${empty price }">
-								<li><a href="/all-product/filter-by-price/under-$100"><i
-										class="far fa-square"></i> Under $100</a></li>
-								<li><a href="/all-product/filter-by-price/$100-$500"><i
-										class="far fa-square"></i> $100 - $500</a></li>
-								<li><a href="/all-product/filter-by-price/over-$500"><i
-										class="far fa-square"></i> Over $500</a></li>
+							<c:when test="${empty brand }">
+								<li><a href="javascript:void(0);"
+									onclick="addUrlParameter('brand', 'Vera Bradley')"><i
+										class="far fa-square"></i> Vera Bradley</a></li>
+								<li><a href="javascript:void(0);"
+									onclick="addUrlParameter('brand', 'Nautica')"><i
+										class="far fa-square"></i> Nautica</a></li>
+								<li><a href="javascript:void(0);"
+									onclick="addUrlParameter('brand', 'Gucci')"><i
+										class="far fa-square"></i> Gucci</a></li>
 							</c:when>
 
-							<c:when test="${price == 'under-$100' }">
-								<li><a href="/all-product"><i
-										class="far fa-check-square"></i> Under $100</a></li>
+							<c:when test="${brand=='Vera Bradley' }">
+								<li><a href="javascript:void(0);"
+									onclick="deleteUrlParameter('brand')"><i
+										class="far fa-check-square"></i> Vera Bradley</a></li>
 							</c:when>
 
-							<c:when test="${price == '$100-$500' }">
-								<li><a href="/all-product"><i
-										class="far fa-check-square"></i> $100 - $500</a></li>
+							<c:when test="${brand=='Nautica' }">
+								<li><a href="javascript:void(0);"
+									onclick="deleteUrlParameter('brand')"><i
+										class="far fa-check-square"></i> Nautica</a></li>
 							</c:when>
-
-							<c:when test="${price == 'over-$500' }">
-								<li><a href="/all-product"><i
-										class="far fa-check-square"></i> Over $500</a></li>
+							<c:when test="${brand=='Gucci' }">
+								<li><a href="javascript:void(0);"
+									onclick="deleteUrlParameter('brand')"><i
+										class="far fa-check-square"></i> Gucci</a></li>
 							</c:when>
 
 						</c:choose>
+					</ul>
+				</div>
 
+				<div class="about-brand">
+					<span class="title">MATERIAL</span>
+					<ul class="list-unstyled">
+						<c:choose>
+							<c:when test="${empty material }">
+								<li><a href="javascript:void(0);"
+									onclick="addUrlParameter('material', 'Da')"><i
+										class="far fa-square"></i> Da</a></li>
+								<li><a href="javascript:void(0);"
+									onclick="addUrlParameter('material', 'Sắt')"><i
+										class="far fa-square"></i> Sắt</a></li>
+								<li><a href="javascript:void(0);"
+									onclick="addUrlParameter('material', 'Gỗ')"><i
+										class="far fa-square"></i> Gỗ</a></li>
+							</c:when>
+
+							<c:when test="${material=='Da' }">
+								<li><a href="javascript:void(0);"
+									onclick="deleteUrlParameter('material')"><i
+										class="far fa-check-square"></i> Da</a></li>
+							</c:when>
+
+							<c:when test="${material=='Sắt' }">
+								<li><a href="javascript:void(0);"
+									onclick="deleteUrlParameter('material')"><i
+										class="far fa-check-square"></i> Sắt</a></li>
+							</c:when>
+
+							<c:when test="${material=='Gỗ' }">
+								<li><a href="javascript:void(0);"
+									onclick="deleteUrlParameter('material')"><i
+										class="far fa-check-square"></i> Gỗ</a></li>
+							</c:when>
+						</c:choose>
 					</ul>
 				</div>
 			</div>
 
 			<div class="product-list">
 				<div class="list-sort">
-					<c:choose>
-						<c:when test="${empty sortPrice }">
-							<select id="sort-select" onchange="location.href=this.value">
-								<option value="">Sort by</option>
-								<option value="/all-product/sort-by-price/low-to-high">Price (low to high)</option>
-								<option value="/all-product/sort-by-price/high-to-low">Price (high to low)</option>
-							</select>
-						</c:when>
-						
-						<c:when test="${sortPrice == 'low-to-high' }">
-							<select id="sort-select" onchange="location.href=this.value">
-								<option value="">Sort by</option>
-								<option value="/all-product/sort-by-price/low-to-high" selected>Price (low to high)</option>
-								<option value="/all-product/sort-by-price/high-to-low">Price (high to low)</option>
-							</select>
-						</c:when>
-						
-						<c:when test="${sortPrice == 'high-to-low' }">
-							<select id="sort-select" onchange="location.href=this.value">
-								<option value="">Sort by</option>
-								<option value="/all-product/sort-by-price/low-to-high">Price (low to high)</option>
-								<option value="/all-product/sort-by-price/high-to-low" selected>Price (high to low)</option>
-							</select>
-						</c:when>
-					</c:choose>
-
+					<select id="sort-select"
+						onchange="addUrlParameter('sort', this.value)">
+						<option value="">Sort by</option>
+						<option value="low-to-high">Price (low to high)</option>
+						<option value="high-to-low">Price (high to low)</option>
+					</select>
 				</div>
 				<div class="list-item">
 					<div class="row">

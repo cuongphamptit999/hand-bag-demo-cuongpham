@@ -10,8 +10,7 @@
 
 		<ul class="navbar-nav">
 			<div class="nav-left" style="display: flex; align-items: center;">
-				<li class="nav-item"><a class="nav-link" href="#">Liên
-						hệ</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbardrop"
 					data-toggle="dropdown"> Sản phẩm </a>
@@ -38,12 +37,19 @@
 					class="nav-link dropdown-toggle" href="#" id="navbardrop"
 					data-toggle="dropdown"> Tài khoản </a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Login</a>
+						<a class="dropdown-item" href="/login">Login</a>
 					</div></li>
 				<li class="nav-item"><a class="nav-link"
-					style="position: relative;" href="#"><img class="cart"
-						src="/img/cart.png" alt="cart"><span class="count-item">0</span></a>
-				</li>
+					style="position: relative;" href="/cart"> <img class="cart"
+						src="/img/cart.png" alt="cart"> <c:choose>
+							<c:when test="${not empty soLuongMua }">
+								<span class="count-item">${soLuongMua }</span>
+							</c:when>
+							<c:when test="${empty soLuongMua }">
+								<span class="count-item">0</span>
+							</c:when>
+						</c:choose>
+				</a></li>
 			</div>
 		</ul>
 	</nav>

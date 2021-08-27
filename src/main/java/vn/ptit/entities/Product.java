@@ -62,7 +62,7 @@ public class Product {
 	@JoinColumn(name = "category_id")
 	private Category category;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "product", fetch = FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "product", fetch = FetchType.EAGER)
 	private List<ImgProduct> imgProducts = new ArrayList<>();
 	
 	public void addImgProduct(ImgProduct imgProduct) {
