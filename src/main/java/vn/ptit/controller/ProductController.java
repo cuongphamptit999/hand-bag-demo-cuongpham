@@ -100,12 +100,13 @@ public class ProductController {
 			HttpServletResponse resp) {
 		model.addAttribute("product", productServices.getProductBySlug(slug).get(0));
 		model.addAttribute("categories", categoryRepository.findAll());
+
 		return "product_detail";
 	}
 
 	@RequestMapping(value = { "/cart" }, method = { RequestMethod.GET })
 	public String getCart(ModelMap model, HttpServletRequest req, HttpServletResponse resp) {
-
+		model.addAttribute("categories", categoryRepository.findAll());
 		return "cart";
 	}
 	
@@ -124,6 +125,7 @@ public class ProductController {
 		billRepository.save(bill);
 		carts.clear();
 		httpSession.setAttribute("giohang", carts);
+		model.addAttribute("categories", categoryRepository.findAll());
 		
 		return "cart";
 	}

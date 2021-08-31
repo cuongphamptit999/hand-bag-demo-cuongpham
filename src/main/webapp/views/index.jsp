@@ -72,7 +72,7 @@
 							src="/files_product/${product.imgProducts.get(0).name }"
 							alt="product"></a>
 						<div class="infor" style="text-align: center;">
-							<a href="/product_detail.html">
+							<a href="/product-detail/${product.slug }">
 								<h6>${product.name }</h6>
 							</a>
 							<div class="price-buy">
@@ -97,7 +97,7 @@
 								src="/files_product/${product.imgProducts.get(0).name }"
 								alt="product"></a>
 							<div class="infor" style="text-align: center;">
-								<a href="/product_detail.html">
+								<a href="/product-detail/${product.slug }">
 									<h6>${product.name }</h6>
 								</a>
 								<div class="price-buy">
@@ -112,7 +112,7 @@
 
 			</div>
 			<div style="text-align: center; margin-top: 40px;">
-				<a class="view-all" href="#"><i class="fas fa-caret-right"></i>
+				<a class="view-all" href="/all-product"><i class="fas fa-caret-right"></i>
 					TẤT CẢ</a>
 			</div>
 

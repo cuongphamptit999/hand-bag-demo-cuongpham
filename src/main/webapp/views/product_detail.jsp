@@ -45,7 +45,7 @@
 						<h2 style="display: inline-block;">$${product.price }</h2>
 						<div class="btn-buy">
 							<button type="button" class="btn btn-warning"
-								style="width: 100%; margin-bottom: 10px;">Cho vào giỏ</button>
+								style="width: 100%; margin-bottom: 10px;" onclick="addToCart('${product.slug }')">Cho vào giỏ</button>
 							<button type="button" class="btn btn-danger" style="width: 100%;">Mua
 								ngay</button>
 						</div>

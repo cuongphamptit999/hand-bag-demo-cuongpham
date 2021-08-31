@@ -43,8 +43,8 @@
                         <tbody>
                         <c:forEach var = "cart" items="${giohang }">
                             <tr>
-                                <td class="san-pham"><a href="/product_detail.html"><img src="/files_product/${cart.product.imgProducts.get(0).name }"
-                                            alt="product"></a><a href="#">
+                                <td class="san-pham"><a href="/product-detail/${cart.product.slug }" style="margin-right: 10px"><img src="/files_product/${cart.product.imgProducts.get(0).name }"
+                                            alt="product"></a><a href="/product-detail/${cart.product.slug }">
                                         <h6>${cart.product.name }</h6>
                                     </a>
                                 </td>
